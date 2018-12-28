@@ -8,12 +8,14 @@ import { HttpService } from '../http.service';
 })
 export class HomeComponent implements OnInit {
   data: any;
+  clicked=false;
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {
     this.getData();
   }
   getData() {
+    this.clicked=true;
     var observable = this._httpService.getTask();
     observable.subscribe(data => {
       this.data = data;
