@@ -8,6 +8,7 @@ import { HttpService } from '../http.service';
 export class MainComponent implements OnInit {
   datastring:any;
   pokedata:any;
+  nulldata:any;
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {
@@ -23,5 +24,9 @@ export class MainComponent implements OnInit {
     observable.subscribe(data=>{
       this.pokedata=data;
     });
+  }
+  cleardata(){
+    this.datastring="";
+    this.pokedata=this.nulldata;
   }
 }
