@@ -34,7 +34,7 @@ export class MainComponent implements OnInit {
   showIp(){
     var observable=this._httpService.getIp();
     observable.subscribe(data=>{
-      this.ip=data.ip;
+      this.ip=data['ip'];
     })
   }
 }
