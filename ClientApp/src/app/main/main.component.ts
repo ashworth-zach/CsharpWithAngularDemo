@@ -9,9 +9,11 @@ export class MainComponent implements OnInit {
   datastring:any;
   pokedata:any;
   nulldata:any;
+  ip:any;
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {
+    this.showIp();
   }
   getstuff(){
     var observable = this._httpService.getstuff();
@@ -28,5 +30,11 @@ export class MainComponent implements OnInit {
   cleardata(){
     this.datastring="";
     this.pokedata=this.nulldata;
+  }
+  showIp(){
+    var observable=this._httpService.getIp();
+    observable.subscribe(data=>{
+      this.ip=data.ip;
+    })
   }
 }

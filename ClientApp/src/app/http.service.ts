@@ -13,4 +13,7 @@ export class HttpService {
   getpoke(){
     return this._http.get('https://pokeapi.co/api/v2/pokemon/ditto/')
   }
+  getIp(){
+    return this._http.get("https://api.ipify.org?format=json")
+  }
 }

@@ -1,5 +1,6 @@
+<div class="jumbotron">here is your public ip address : {{ip | json}}</div>
 <button (click)='getstuff()'>click to get data from server</button>
 <p>{{datastring}}</p>
+<button (click)="cleardata()">Click to clear</button>
 <button (click)='getpokemon()'>click to make an api call to pokeapi</button>
 {{pokedata | json}}
-<button (click)="cleardata()">Click to clear</button>
